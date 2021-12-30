@@ -1,4 +1,4 @@
-package com.yunjung.test
+package com.yunjung.practice
 
 import org.junit.Test
 

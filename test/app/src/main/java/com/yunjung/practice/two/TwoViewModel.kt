@@ -1,4 +1,4 @@
-package com.yunjung.test.two
+package com.yunjung.practice.two
 
 import androidx.lifecycle.ViewModel
 

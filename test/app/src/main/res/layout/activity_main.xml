@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.yunjung.test.main.MainViewModel" />
+            type="com.yunjung.practice.main.MainViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

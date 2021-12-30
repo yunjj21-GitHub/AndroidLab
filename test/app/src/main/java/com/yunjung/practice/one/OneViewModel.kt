@@ -1,4 +1,4 @@
-package com.yunjung.test.one
+package com.yunjung.practice.one
 
 import androidx.lifecycle.ViewModel
 

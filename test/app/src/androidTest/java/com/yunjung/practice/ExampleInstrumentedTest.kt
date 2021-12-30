@@ -1,4 +1,4 @@
-package com.yunjung.test
+package com.yunjung.practice
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

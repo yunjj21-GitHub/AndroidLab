@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.yunjung.test.two.TwoViewModel" />
+            type="com.yunjung.practice.two.TwoViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout

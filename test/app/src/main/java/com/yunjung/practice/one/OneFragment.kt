@@ -1,4 +1,4 @@
-package com.yunjung.test.one
+package com.yunjung.practice.one
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.yunjung.test.R
-import com.yunjung.test.databinding.FragmentOneBinding
+import com.yunjung.practice.R
+import com.yunjung.practice.databinding.FragmentOneBinding
 
 class OneFragment : Fragment() {
     lateinit var binding : FragmentOneBinding

@@ -1,4 +1,4 @@
-package com.yunjung.test.two
+package com.yunjung.practice.two
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.yunjung.test.R
-import com.yunjung.test.databinding.FragmentOneBinding
-import com.yunjung.test.databinding.FragmentTwoBinding
-import com.yunjung.test.one.OneViewModel
+import com.yunjung.practice.R
+import com.yunjung.practice.databinding.FragmentTwoBinding
 
 class TwoFragment : Fragment() {
     lateinit var binding : FragmentTwoBinding

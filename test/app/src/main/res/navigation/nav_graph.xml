@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/oneFragment"
-        android:name="com.yunjung.test.one.OneFragment"
+        android:name="com.yunjung.practice.one.OneFragment"
         android:label="OneFragment" >
         <action
             android:id="@+id/action_oneFragment_to_twoFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/twoFragment"
-        android:name="com.yunjung.test.two.TwoFragment"
+        android:name="com.yunjung.practice.two.TwoFragment"
         android:label="TwoFragment" />
 </navigation>

@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.yunjung.test.one.OneViewModel" />
+            type="com.yunjung.practice.one.OneViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
