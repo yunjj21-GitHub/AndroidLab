@@ -1,6 +1,7 @@
 package com.yunjung.practice.one
 
 import android.Manifest
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapFragment
 import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
+import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.FusedLocationSource
+import com.naver.maps.map.util.MarkerIcons
 import com.yunjung.practice.R
 import com.yunjung.practice.databinding.FragmentOneBinding
 
@@ -78,6 +82,9 @@ class OneFragment : Fragment(), OnMapReadyCallback {
         this.naverMap = naverMap
         naverMap.locationSource = locationSource
         requestPermissions(PERMISSIONS, LOCATION_PERMISSION_REQUEST_CODE) // 사용자에게 권한을 요청함
+
+        // 마커를 추가
+        createMarkerOnMap(37.5670135, 126.9783740, "어딘가")
     }
 
     override fun onRequestPermissionsResult(requestCode: Int,
@@ -94,5 +101,17 @@ class OneFragment : Fragment(), OnMapReadyCallback {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    // 네이버 지도에 마커를 표시
+    fun createMarkerOnMap(lat : Double, log : Double, label : String){
+        val marker = Marker()
+        marker.position = LatLng(lat, log) // 마커의 좌표 설정
+        // 마커의 색상 설정
+        marker.icon = MarkerIcons.BLACK
+        marker.iconTintColor = Color.RED
+        marker.map = naverMap
+        // 마커의 라벨 설정
+        marker.captionText = label
     }
 }
