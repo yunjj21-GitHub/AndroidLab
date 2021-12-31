@@ -55,6 +55,9 @@ dependencies {
     // 네이버 지도 SDK 관련
     implementation("com.naver.maps:map-sdk:3.13.0")
 
+    // 지도 현재위치 관련
+    implementation("com.google.android.gms:play-services-location:16.0.0")
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
