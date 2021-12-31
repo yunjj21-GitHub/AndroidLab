@@ -1,5 +1,6 @@
 package com.yunjung.practice.two
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,5 +31,19 @@ class TwoFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(TwoViewModel::class.java)
         binding.viewModel = viewModel
+
+        binding.shareBtn.setOnClickListener {
+            showPopUpForSharing("공유할 내용")
+        }
+    }
+
+    // 공유하기 팝업창을 띄움
+    fun showPopUpForSharing(content : String){
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, content)
+        }
+        startActivity(Intent.createChooser(shareIntent, null))
     }
 }
