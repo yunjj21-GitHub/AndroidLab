@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/twoFragment"
         android:name="com.yunjung.practice.two.TwoFragment"
-        android:label="TwoFragment" />
+        android:label="TwoFragment" >
+        <action
+            android:id="@+id/action_twoFragment_to_threeFragment"
+            app:destination="@id/threeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/threeFragment"
+        android:name="com.yunjung.practice.three.ThreeFragment"
+        android:label="ThreeFragment" />
 </navigation>

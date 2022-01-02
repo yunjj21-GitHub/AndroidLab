@@ -58,6 +58,11 @@ dependencies {
     // 지도 현재위치 관련
     implementation("com.google.android.gms:play-services-location:16.0.0")
 
+    // 리사이클러뷰 관련
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
