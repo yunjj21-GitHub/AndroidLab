@@ -63,6 +63,12 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation "androidx.cardview:cardview:1.0.0"
 
+    // 메터리얼 디자인 관련
+    implementation 'com.google.android.material:material:1.5.0-alpha04'
+
+    // 뷰페이저2 관련
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'

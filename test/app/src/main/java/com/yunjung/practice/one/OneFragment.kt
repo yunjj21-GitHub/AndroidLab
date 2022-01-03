@@ -55,9 +55,12 @@ class OneFragment : Fragment(), OnMapReadyCallback {
         viewModel = ViewModelProvider(this).get(OneViewModel::class.java)
         binding.viewModel = viewModel
 
-        val moveBtn = binding.button
-        moveBtn.setOnClickListener {
+        binding.moveTwoFgBtn.setOnClickListener {
             findNavController().navigate(R.id.action_oneFragment_to_twoFragment)
+        }
+
+        binding.moveFourFgBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_oneFragment_to_fourFragment)
         }
 
         /* 네이버 지도 API 관련 */

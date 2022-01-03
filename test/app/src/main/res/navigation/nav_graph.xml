@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_oneFragment_to_twoFragment"
             app:destination="@id/twoFragment" />
+        <action
+            android:id="@+id/action_oneFragment_to_fourFragment"
+            app:destination="@id/fourFragment" />
     </fragment>
     <fragment
         android:id="@+id/twoFragment"
@@ -24,4 +27,8 @@
         android:id="@+id/threeFragment"
         android:name="com.yunjung.practice.three.ThreeFragment"
         android:label="ThreeFragment" />
+    <fragment
+        android:id="@+id/fourFragment"
+        android:name="com.yunjung.practice.four.FourFragment"
+        android:label="FourFragment" />
 </navigation>
