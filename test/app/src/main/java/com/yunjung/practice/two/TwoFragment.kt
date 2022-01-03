@@ -36,10 +36,6 @@ class TwoFragment : Fragment() {
         binding.shareBtn.setOnClickListener {
             showPopUpForSharing("공유할 내용")
         }
-
-        binding.moveToThreeFragmentBtn.setOnClickListener {
-            moveToThreeFragment()
-        }
     }
 
     // 공유하기 팝업창을 띄움
@@ -50,10 +46,5 @@ class TwoFragment : Fragment() {
             putExtra(Intent.EXTRA_TEXT, content)
         }
         startActivity(Intent.createChooser(shareIntent, null))
-    }
-
-    // ThreeFragment로 이동
-    fun moveToThreeFragment(){
-        findNavController().navigate(R.id.action_twoFragment_to_threeFragment)
     }
 }

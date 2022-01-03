@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="쇼핑 라이프"
+        android:id="@+id/shopping"
+        android:icon="@drawable/ic_shopping_cart"/>
+    <item
+        android:title="홈"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:title="뉴스 콘텐츠"
+        android:id="@+id/news"
+        android:icon="@drawable/ic_news"/>
+</menu>

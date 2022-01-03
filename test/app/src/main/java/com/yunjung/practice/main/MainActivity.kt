@@ -5,9 +5,11 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yunjung.practice.R
 import com.yunjung.practice.databinding.ActivityMainBinding
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     // Navigation Component 관련 변수
     private lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var host : NavHostFragment
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +36,17 @@ class MainActivity : AppCompatActivity() {
 
         // NavHost를 이용하여 NavController가져오기
         host = supportFragmentManager.findFragmentById(R.id.fragment_frame) as NavHostFragment? ?: return
-        val navController = host.navController
+        navController = host.navController
 
         // 최상위 수준의 화면 지정
-        appBarConfiguration = AppBarConfiguration(navController.graph)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.oneFragment, R.id.twoFragment, R.id.threeFragment))
 
         // 액션바에 navController와 appBarConfiguration객체를 설정
         setupActionBar(navController, appBarConfiguration)
 
-        setTitleAndBackButton(navController)
+        setTitleAndBackButton()
+
+        initBottomNavigation()
     }
 
     // 툴바를 액션바로 지정
@@ -57,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // 전환되는 Fragment에 따라 적절한 Title과 BackButton이 보이도록 함
-    private fun setTitleAndBackButton(navController : NavController){
+    private fun setTitleAndBackButton(){
         val toolbar = binding.toolbar
         val title = binding.titleView
 
@@ -65,7 +70,6 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             // back button icon 이미지 설정 or Toolbar title 설정 etc..
             // ex)
-            toolbar.setNavigationIcon(R.drawable.ic_bacck)
             when (destination.id) {
                 R.id.oneFragment -> {
                     title.text = "oneFragment"
@@ -77,9 +81,28 @@ class MainActivity : AppCompatActivity() {
                     title.text = "threeFragment"
                 }
                 R.id.fourFragment -> {
+                    toolbar.setNavigationIcon(R.drawable.ic_bacck)
                     title.text = "fourFragment"
                 }
             }
+        }
+    }
+
+    // Bottom Navation이 실질적으로 동작하게 함
+    private fun initBottomNavigation(){
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item->
+            when(item.itemId){
+                R.id.shopping -> {
+                    navController.navigate(R.id.action_global_oneFragment)
+                }
+                R.id.home->{
+                    navController.navigate(R.id.action_global_twoFragment)
+                }
+                R.id.news->{
+                    navController.navigate(R.id.action_global_threeFragment)
+                }
+            }
+            true
         }
     }
 }

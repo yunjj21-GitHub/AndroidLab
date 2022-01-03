@@ -55,10 +55,6 @@ class OneFragment : Fragment(), OnMapReadyCallback {
         viewModel = ViewModelProvider(this).get(OneViewModel::class.java)
         binding.viewModel = viewModel
 
-        binding.moveTwoFgBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_oneFragment_to_twoFragment)
-        }
-
         binding.moveFourFgBtn.setOnClickListener {
             findNavController().navigate(R.id.action_oneFragment_to_fourFragment)
         }

@@ -9,20 +9,13 @@
         android:name="com.yunjung.practice.one.OneFragment"
         android:label="OneFragment" >
         <action
-            android:id="@+id/action_oneFragment_to_twoFragment"
-            app:destination="@id/twoFragment" />
-        <action
             android:id="@+id/action_oneFragment_to_fourFragment"
             app:destination="@id/fourFragment" />
     </fragment>
     <fragment
         android:id="@+id/twoFragment"
         android:name="com.yunjung.practice.two.TwoFragment"
-        android:label="TwoFragment" >
-        <action
-            android:id="@+id/action_twoFragment_to_threeFragment"
-            app:destination="@id/threeFragment" />
-    </fragment>
+        android:label="TwoFragment" />
     <fragment
         android:id="@+id/threeFragment"
         android:name="com.yunjung.practice.three.ThreeFragment"
@@ -31,4 +24,7 @@
         android:id="@+id/fourFragment"
         android:name="com.yunjung.practice.four.FourFragment"
         android:label="FourFragment" />
+    <action android:id="@+id/action_global_twoFragment" app:destination="@id/twoFragment" />
+    <action android:id="@+id/action_global_oneFragment" app:destination="@id/oneFragment" />
+    <action android:id="@+id/action_global_threeFragment" app:destination="@id/threeFragment" />
 </navigation>

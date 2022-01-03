@@ -23,24 +23,13 @@
 
     </FrameLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/moveTwoFgBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFEB3B"
-        android:text="two Fragment로 이동"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/moveFourFgBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/purple_700"
         android:text="Four Fragment로 이동"
-        app:layout_constraintBottom_toTopOf="@+id/moveTwoFgBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
