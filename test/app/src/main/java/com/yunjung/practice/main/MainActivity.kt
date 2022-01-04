@@ -1,7 +1,11 @@
 package com.yunjung.practice.main
 
+import android.content.ContentValues
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -11,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yunjung.practice.R
+import com.yunjung.practice.Test
 import com.yunjung.practice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         setTitleAndBackButton()
 
         initBottomNavigation()
+
+        val userId : String = (applicationContext as Test).userId
+        Log.e(ContentValues.TAG, "MainActivity" + userId)
     }
 
     // 툴바를 액션바로 지정

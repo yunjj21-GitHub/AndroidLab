@@ -1,8 +1,10 @@
 package com.yunjung.practice.one
 
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +22,7 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.yunjung.practice.R
+import com.yunjung.practice.Test
 import com.yunjung.practice.databinding.FragmentOneBinding
 
 class OneFragment : Fragment(), OnMapReadyCallback {
@@ -66,6 +69,10 @@ class OneFragment : Fragment(), OnMapReadyCallback {
         // 지도에 현재 위치 추가
         locationSource =
             FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE)
+
+        val userId : String = (requireContext().applicationContext as Test).userId
+        // val userId : String = (requireActivity().applicationContext as Test).userId
+        Log.e(TAG, "OneFragment" + userId)
     }
 
     // 네이버 지도 뷰를 생성
