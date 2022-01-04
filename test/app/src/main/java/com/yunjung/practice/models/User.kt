@@ -1,8 +1,12 @@
 package com.yunjung.practice.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class User(
-    val _id : String,
-    val name : String,
-    val age : Int,
-    val address : String
-)
+    var _id : String,
+    var name : String,
+    var age : Int,
+    var address : String
+):Parcelable

@@ -15,7 +15,11 @@
     <fragment
         android:id="@+id/twoFragment"
         android:name="com.yunjung.practice.two.TwoFragment"
-        android:label="TwoFragment" />
+        android:label="TwoFragment" >
+        <action
+            android:id="@+id/action_twoFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/threeFragment"
         android:name="com.yunjung.practice.three.ThreeFragment"
@@ -27,4 +31,12 @@
     <action android:id="@+id/action_global_twoFragment" app:destination="@id/twoFragment" />
     <action android:id="@+id/action_global_oneFragment" app:destination="@id/oneFragment" />
     <action android:id="@+id/action_global_threeFragment" app:destination="@id/threeFragment" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.yunjung.practice.result.ResultFragment"
+        android:label="ResultFragment" >
+        <argument
+            android:name="userInput"
+            app:argType="com.yunjung.practice.models.User" />
+    </fragment>
 </navigation>

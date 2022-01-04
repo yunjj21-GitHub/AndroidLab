@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.yunjung.practice.result.ResultViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="@{viewModel.user._id}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@{viewModel.user.name}"
+        app:layout_constraintEnd_toEndOf="@+id/nameView"
+        app:layout_constraintStart_toStartOf="@+id/nameView"
+        app:layout_constraintTop_toBottomOf="@+id/nameView" />
+
+    <TextView
+        android:id="@+id/addressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@{Integer.toString(viewModel.user.age)}"
+        app:layout_constraintEnd_toEndOf="@+id/ageView"
+        app:layout_constraintStart_toStartOf="@+id/ageView"
+        app:layout_constraintTop_toBottomOf="@+id/ageView" />
+
+    <TextView
+        android:id="@+id/idView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@{viewModel.user.address}"
+        app:layout_constraintEnd_toEndOf="@+id/addressView"
+        app:layout_constraintStart_toStartOf="@+id/addressView"
+        app:layout_constraintTop_toBottomOf="@+id/addressView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

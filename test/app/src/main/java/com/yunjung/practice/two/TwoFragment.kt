@@ -1,7 +1,9 @@
 package com.yunjung.practice.two
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.yunjung.practice.R
 import com.yunjung.practice.databinding.FragmentTwoBinding
+import com.yunjung.practice.models.User
+import com.yunjung.practice.result.ResultFragmentDirections
 
 class TwoFragment : Fragment() {
     lateinit var binding : FragmentTwoBinding
@@ -36,15 +40,32 @@ class TwoFragment : Fragment() {
         binding.shareBtn.setOnClickListener {
             showPopUpForSharing("공유할 내용")
         }
+
+        binding.handOverBtn.setOnClickListener {
+            handOverUserInputToResultFragment()
+        }
     }
 
     // 공유하기 팝업창을 띄움
-    fun showPopUpForSharing(content : String){
+    private fun showPopUpForSharing(content : String){
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
             type = "text/plain"
             putExtra(Intent.EXTRA_TEXT, content)
         }
         startActivity(Intent.createChooser(shareIntent, null))
+    }
+
+    // TwoFragment에 사용자의 입력값(User)을 전달
+    private fun handOverUserInputToResultFragment(){
+        val _id = binding.userId.text.toString()
+        val name = binding.name.text.toString()
+        val age = binding.age.text.toString().toInt()
+        val address = binding.address.text.toString()
+
+        val userInput = User(_id, name, age, address)
+
+        val action = TwoFragmentDirections.actionTwoFragmentToResultFragment(userInput)
+        findNavController().navigate(action)
     }
 }
